@@ -18,6 +18,16 @@
     <dependencies>
         <nextcloud min-version="24" max-version="24"/>
     </dependencies>
+    <repair-steps>
+		<pre-migration>
+			<step>OCA\DEMO\Migration\PreMigration</step>
+		</pre-migration>
+		<post-migration>
+			<step>OCA\DEMO\Migration\BogusTrackRemoval</step>
+			<step>OCA\DEMO\Migration\DiskNumberMigration</step>
+			<step>OCA\DEMO\Migration\TimestampInit</step>
+		</post-migration>
+	</repair-steps>
     <navigations>
         <navigation>
             <name>D E M O</name>
