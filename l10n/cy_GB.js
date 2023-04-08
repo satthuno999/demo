@@ -1,12 +1,22 @@
 OC.L10N.register(
-    "music",
+    "demo",
     {
+    "Edit" : "Golygu",
+    "Save" : "Cadw",
+    "Search" : "Chwilio",
+    "Category" : "Categori",
+    "Tags" : "Tagiau",
+    "Categories" : "Categorïau",
+    "Rename" : "Ailenwi",
+    "Add" : "Ychwanegu",
+    "Close" : "Cau",
+    "Name" : "Enw",
     "Description" : "Disgrifiad",
-    "Music" : "Cerddoriaeth",
-    "Next" : "Nesaf",
-    "Pause" : "Seibio",
-    "Play" : "Chwarae",
-    "Previous" : "Blaenorol",
-    "Repeat" : "Ailadrodd"
+    "URL" : "URL",
+    "Last modified" : "Newidiwyd diwethaf",
+    "Loading…" : "Yn llwytho…",
+    "Cancel" : "Diddymu",
+    "OK" : "Iawn",
+    "None" : "Dim"
 },
 "nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;");

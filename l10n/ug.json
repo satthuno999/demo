@@ -1,10 +1,16 @@
 { "translations": {
+    "Edit" : "تەھرىر",
+    "Save" : "ساقلا",
+    "Search" : "Search",
+    "Tags" : "بەلگەلەر",
+    "Rename" : "ئات ئۆزگەرت",
+    "Add" : "قوش",
+    "Close" : "ياپ",
+    "Name" : "ئاتى",
     "Description" : "چۈشەندۈرۈش",
-    "Music" : "نەغمە",
-    "Next" : "كېيىنكى",
-    "Pause" : "ۋاقىتلىق توختا",
-    "Play" : "چال",
-    "Previous" : "ئالدىنقى",
-    "Repeat" : "قايتىلا"
-},"pluralForm" :"nplurals=1; plural=0;"
+    "URL" : "URL",
+    "Cancel" : "ۋاز كەچ",
+    "OK" : "جەزملە",
+    "None" : "يوق"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

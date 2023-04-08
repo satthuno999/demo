@@ -1,78 +1,91 @@
-<?php declare(strict_types=1);
-namespace OCA\DEMO\Search;
+<?php
 
-use OCA\DEMO\App\Music;
-use OCA\DEMO\Db\MatchMode;
+namespace OCA\demo\Search;
 
-class Provider extends \OCP\Search\Provider {
+use OCA\demo\AppInfo\Application;
+use OCA\demo\Service\RecipeService;
+use OCP\IL10N;
+use OCP\IUser;
+use OCP\IURLGenerator;
+use OCP\Search\IProvider;
+use OCP\Search\ISearchQuery;
+use OCP\Search\SearchResult;
+use OCP\Search\SearchResultEntry;
+use OCP\Util;
 
-	/* Limit the maximum number of matches because the Provider API is limited and does
-	 * not support pagination. The core paginates the results to 30 item pages, but it
-	 * obtains all the items from the Providers again on creation of each page.
-	 * If there were thousands of mathces, we would end up doing lot of unnecessary work.
-	 */
-	const MAX_RESULTS_PER_TYPE = 100;
+// IProvider requies NC >= 20
+// Remove conditional once we end support for NC 19
+if (Util::getVersion()[0] >= 20) {
+	class Provider implements IProvider {
+		/** @var IL10N */
+		private $l;
 
-	private $artistMapper;
-	private $albumMapper;
-	private $trackMapper;
-	private $urlGenerator;
-	private $userId;
-	private $l10n;
-	private $resultTypeNames;
-	private $resultTypePaths;
-	private $logger;
+		/** @var IURLGenerator */
+		private $urlGenerator;
 
-	public function __construct() {
-		$app = \OC::$server->query(Music::class);
-		$c = $app->getContainer();
+		/** @var RecipeService */
+		private $recipeService;
 
-		$this->artistMapper = $c->query('ArtistMapper');
-		$this->albumMapper = $c->query('AlbumMapper');
-		$this->trackMapper = $c->query('TrackMapper');
-		$this->urlGenerator = $c->query('URLGenerator');
-		$this->userId = $c->query('UserId');
-		$this->l10n = $c->query('L10N');
-		$this->logger = $c->query('Logger');
+		public function __construct(
+			IL10n $il10n,
+			IURLGenerator $urlGenerator,
+			RecipeService $recipeService
+		) {
+			$this->l = $il10n;
+			$this->urlGenerator = $urlGenerator;
+			$this->recipeService = $recipeService;
+		}
 
-		$this->resultTypeNames = [
-			'music_artist' => $this->l10n->t('Artist'),
-			'music_album' => $this->l10n->t('Album'),
-			'music_track' => $this->l10n->t('Track')
-		];
+		public function getId(): string {
+			return Application::APP_ID;
+		}
 
-		$basePath = $this->urlGenerator->linkToRoute('music.page.index');
-		$this->resultTypePaths = [
-			'music_artist' => $basePath . "#/artist/",
-			'music_album' => $basePath . "#/album/",
-			'music_track' => $basePath . "#/track/"
-		];
+		public function getName(): string {
+			return $this->l->t('Recipes');
+		}
+
+		public function getOrder(string $route, array $routeParameters): int {
+			if (strpos($route, 'files' . '.') === 0) {
+				return 25;
+			} elseif (strpos($route, Application::APP_ID . '.') === 0) {
+				return -1;
+			}
+			return 4;
+		}
+
+		public function search(IUser $user, ISearchQuery $query): SearchResult {
+			$recipes = $this->recipeService->findRecipesInSearchIndex($query->getTerm());
+			$result = array_map(
+				function (array $recipe) use ($user): SearchResultEntry {
+					$id = $recipe['recipe_id'];
+
+					$subline = '';
+					$category = $recipe['category'];
+					if ($category !== null) {
+						// TRANSLATORS Will be shown in search results, listing the recipe category, e.g., 'in Salads'
+						$subline = $this->l->t('in %s', [$category]);
+					}
+
+					return new SearchResultEntry(
+						// Thumb image
+						$this->urlGenerator->linkToRoute('demo.recipe.image', ['id' => $id, 'size' => 'thumb']),
+						// Name as title
+						$recipe['name'],
+						// Category as subline
+						$subline,
+						// Link to Vue route of recipe
+						$this->urlGenerator->linkToRouteAbsolute('demo.main.index') . '#/recipe/' . $id
+					);
+				}, $recipes
+			);
+
+			return SearchResult::complete(
+				$this->getName(),
+				$result
+			);
+		}
 	}
-
-	private function createResult($entity, $title, $type) {
-		$link = $this->resultTypePaths[$type] . $entity->id;
-		$titlePrefix = $this->l10n->t('Music') . ' - ' . $this->resultTypeNames[$type] . ': ';
-		return new Result($entity->id, $titlePrefix . $title, $link, $type);
-	}
-
-	public function search($query) {
-		$results=[];
-
-		$artists = $this->artistMapper->findAllByName($query, $this->userId, MatchMode::Substring, self::MAX_RESULTS_PER_TYPE);
-		foreach ($artists as $artist) {
-			$results[] = $this->createResult($artist, $artist->name, 'music_artist');
-		}
-
-		$albums = $this->albumMapper->findAllByName($query, $this->userId, MatchMode::Substring, self::MAX_RESULTS_PER_TYPE);
-		foreach ($albums as $album) {
-			$results[] = $this->createResult($album, $album->name, 'music_album');
-		}
-
-		$tracks = $this->trackMapper->findAllByName($query, $this->userId, MatchMode::Substring, self::MAX_RESULTS_PER_TYPE);
-		foreach ($tracks as $track) {
-			$results[] = $this->createResult($track, $track->title, 'music_track');
-		}
-
-		return $results;
+} else {
+	class Provider {
 	}
 }

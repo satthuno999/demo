@@ -1,9 +1,21 @@
-# SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
-# SPDX-License-Identifier: AGPL-3.0-or-later
-.idea
-*.iml
-/vendor/
-/build/
-node_modules/
-/.php_cs.cache
-js/*hot-update.*
+*.swp
+*.swo
+
+demo.tar.gz
+
+.idea/
+
+/.php-cs-fixer.cache
+/.eslintcache
+
+# Built js package
+js/*
+
+### NPM ###
+
+# Node modules
+node_modules
+
+### Composer ###
+
+/vendor

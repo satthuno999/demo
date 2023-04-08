@@ -1,12 +1,18 @@
 OC.L10N.register(
-    "music",
+    "demo",
     {
+    "Edit" : "تەھرىر",
+    "Save" : "ساقلا",
+    "Search" : "Search",
+    "Tags" : "بەلگەلەر",
+    "Rename" : "ئات ئۆزگەرت",
+    "Add" : "قوش",
+    "Close" : "ياپ",
+    "Name" : "ئاتى",
     "Description" : "چۈشەندۈرۈش",
-    "Music" : "نەغمە",
-    "Next" : "كېيىنكى",
-    "Pause" : "ۋاقىتلىق توختا",
-    "Play" : "چال",
-    "Previous" : "ئالدىنقى",
-    "Repeat" : "قايتىلا"
+    "URL" : "URL",
+    "Cancel" : "ۋاز كەچ",
+    "OK" : "جەزملە",
+    "None" : "يوق"
 },
-"nplurals=1; plural=0;");
+"nplurals=2; plural=(n != 1);");

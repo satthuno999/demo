@@ -1,0 +1,43 @@
+<?php
+
+namespace OCA\demo\Migration;
+
+use Closure;
+use OCP\DB\ISchemaWrapper;
+use OCP\Migration\SimpleMigrationStep;
+use OCP\Migration\IOutput;
+
+class Version000000Date20190910100911 extends SimpleMigrationStep {
+	/**
+	 * @param IOutput $output
+	 * @param Closure $schemaClosure The `\Closure` returns a `ISchemaWrapper`
+	 * @param array $options
+	 * @return null|ISchemaWrapper
+	 */
+	public function changeSchema(IOutput $output, Closure $schemaClosure, array $options) {
+		/** @var ISchemaWrapper $schema */
+		$schema = $schemaClosure();
+
+		$recipes_table = $schema->getTable('demo_recipes');
+
+		if (!$recipes_table->hasColumn('user_id')) {
+			$recipes_table->addColumn('user_id', 'string', [
+				'notnull' => true,
+				'length' => 64,
+				'default' => 'empty',
+			]);
+		}
+
+		$keywords_table = $schema->getTable('demo_keywords');
+
+		if (!$keywords_table->hasColumn('user_id')) {
+			$keywords_table->addColumn('user_id', 'string', [
+				'notnull' => true,
+				'length' => 64,
+				'default' => 'empty',
+			]);
+		}
+
+		return $schema;
+	}
+}

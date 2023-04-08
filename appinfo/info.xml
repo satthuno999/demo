@@ -1,37 +1,29 @@
 <?xml version="1.0"?>
+<!-- Do not alter this file in directly, tweak the template in .github/actions/deploy/info.xml.dist! -->
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <!--
-    SPDX-FileCopyrightText: Vũ Xuân Bình <binh9aqktk@gmail.com>
-    SPDX-License-Identifier: CC0-1.0
-    -->
     <id>demo</id>
-    <name>D E M O</name>
-    <summary>Nghe nhạc</summary>
-    <description><![CDATA[Nghe nhạc]]></description>
-    <version>0.0.1</version>
+    <name>demo</name>
+    <summary>An integrated demo using schema.org JSON files as recipes</summary>
+    <description><![CDATA[A library for all your recipes. It uses JSON files following the schema.org recipe format. To add a recipe to the collection, you can paste in the URL of the recipe, and the provided web page will be parsed and downloaded to whichever folder you specify in the app settings.]]></description>
+    <version>0.10.2</version>
     <licence>agpl</licence>
-    <author mail="binh9aqktk@gmail.com" homepage="https://github.com/satthuno999">Vũ Xuân Bình</author>
-    <namespace>DEMO</namespace>
+    <author mail="binh9aqktk@gmail.com">S P A R K</author>
+    <namespace>demo</namespace>
     <category>multimedia</category>
-    <bugs>https://fb.com/xuanbinh.vu.6464</bugs>
+    <website>https://github.com/satthuno999/demo/</website>
+    <bugs>https://github.com/satthuno999/demo/issues</bugs>
+    <screenshot small-thumbnail="https://raw.githubusercontent.com/nextcloud/demo/stable/img/screenshot1_small.png">https://raw.githubusercontent.com/nextcloud/demo/stable/img/screenshot1_small.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/nextcloud/demo/stable/img/screenshot2.png</screenshot>
     <dependencies>
-        <nextcloud min-version="24" max-version="24"/>
+        <php min-version="7.4"/>
+        <nextcloud min-version="24" max-version="27"/>
     </dependencies>
-    <repair-steps>
-		<pre-migration>
-			<step>OCA\DEMO\Migration\PreMigration</step>
-		</pre-migration>
-		<post-migration>
-			<step>OCA\DEMO\Migration\BogusTrackRemoval</step>
-			<step>OCA\DEMO\Migration\DiskNumberMigration</step>
-			<step>OCA\DEMO\Migration\TimestampInit</step>
-		</post-migration>
-	</repair-steps>
     <navigations>
         <navigation>
-            <name>D E M O</name>
-            <route>demo.page.index</route>
+            <name>demo</name>
+            <route>demo.main.index</route>
+            <icon>app.svg</icon>
         </navigation>
     </navigations>
 </info>

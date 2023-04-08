@@ -1,26 +1,28 @@
 {
-    "name": "nextcloud/demo",
-	"description": "Nghe nhạc",
-	"type": "project",
-	"license": "AGPL-3.0-or-later",
+    "name": "nextcloud-apps/demo",
+    "description": "An integrated demo using YAML files as recipes",
+    "type": "project",
+    "license": "AGPL",
     "authors": [
-		{
-			"name": "Vũ Xuân Bình"
-		}
-	],
+        {
+            "name": "Jeppe Zapp"
+        }
+    ],
+    "require": {
+      "ext-libxml": "*"
+    },
     "require-dev": {
-        "behat/behat": "~3.0",
-        "guzzlehttp/guzzle": "~6.0",
-        "phpunit/phpunit": "^8.0",
-        "owncloud/coding-standard": "^2.0",
-        "phpstan/phpstan": "^1.8",
-        "nextcloud/ocp": "^13.0.0",
-        "doctrine/dbal": "*"
+        "nextcloud/coding-standard": "^1.0.0",
+        "christophwurst/nextcloud_testing": "^0.12.4"
     },
     "scripts": {
-        "unit-tests": "phpunit --coverage-html coverage-html-unit --configuration tests/php/unit/phpunit.xml tests/php/unit",
-        "integration-tests": "phpunit --coverage-html coverage-html-integration --configuration tests/php/integration/phpunit.xml tests/php/integration",
-        "analyze": "phpstan",
-        "behat": "behat -c tests/behat.yml"
+        "cs:check": "./vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "cs:fix": "./vendor/bin/php-cs-fixer fix",
+        "lint:lint": "find . -name '*.php' -not -path './vendor/*' -not -path './.github/*' -not -path './node_modules/*' -not -path './tests/phpunit/*' -print0 | xargs -0 -n1 php -l"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
     }
 }
