@@ -1,6 +1,6 @@
 <template>
     <NcContent app-name="demo">
-        <AppNavi class="app-navigation" />
+        <AppNavi class="app-navigation col-span-1 bg-white" />
         <NcAppContent>
             <div>
                 <AppControls />
