@@ -26,7 +26,7 @@ OC.L10N.register(
     "Image size \"%s\" is not recognized." : "Kích thước hình ảnh \"%s\" không được công nhận.",
     "The full-sized image is not a thumbnail." : "Hình ảnh có kích thước đầy đủ không phải là hình thu nhỏ.",
     "The thumbnail type %d is not known." : "Loại hình thu nhỏ %d không được xác nhận.",
-    "demo" : "Sách dạy nấu ăn",
+    "demo" : "Nhạc đê",
     "An integrated demo using schema.org JSON files as recipes" : "Sách dạy nấu ăn tích hợp sử dụng các tệp JSON của schema.org làm công thức nấu ăn",
     "A library for all your recipes. It uses JSON files following the schema.org recipe format. To add a recipe to the collection, you can paste in the URL of the recipe, and the provided web page will be parsed and downloaded to whichever folder you specify in the app settings." : "Một thư viện cho tất cả các công thức nấu ăn của bạn. Nó sử dụng các tệp JSON theo định dạng công thức schema.org. Để thêm công thức vào bộ sưu tập, bạn có thể dán vào URL của công thức đó và trang web được cung cấp sẽ được phân tích cú pháp và tải xuống bất kỳ thư mục nào bạn chỉ định trong cài đặt ứng dụng.",
     "All recipes" : "Tất cả các công thức",
