@@ -1,16 +1,6 @@
 OC.L10N.register(
     "demo",
     {
-    "Edit" : "ಸಂಪಾದಿಸು",
-    "Save" : "﻿ಉಳಿಸಿ",
-    "Search" : "Search",
-    "Rename" : "﻿ಮರುಹೆಸರಿಸು",
-    "Add" : "﻿ಸೇರಿಸಿ",
-    "Close" : "ಮುಚ್ಚು",
-    "Name" : "﻿ಹೆಸರು",
-    "URL" : "ಜಾಲದ ಕೊಂಡಿ",
-    "Cancel" : "﻿ರದ್ದು",
-    "OK" : "ಸರಿ",
-    "None" : "﻿ಯಾವುದೂ ಇಲ್ಲ"
+    "Next" : "ಮುಂದೆ"
 },
 "nplurals=2; plural=(n > 1);");

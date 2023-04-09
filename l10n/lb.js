@@ -1,21 +1,14 @@
 OC.L10N.register(
     "demo",
     {
-    "in %s" : "an %s",
-    "Edit" : "Änneren",
-    "Save" : "Späicheren",
-    "Search" : "Search",
-    "Tags" : "Tags",
-    "Rename" : "Ëmbenennen",
-    "Add" : "Derbäimaachen",
-    "Close" : "Zoumaachen",
-    "Name" : "Numm",
+    "Albums" : "Album",
+    "Artists" : "Artist",
     "Description" : "Beschreiwung",
-    "URL" : "URL",
-    "Loading…" : "Et gëtt gelueden",
-    "Dismiss" : "Ofbriechen",
-    "Cancel" : "Ofbriechen",
-    "OK" : "OK",
-    "None" : "Keng"
+    "demo" : "Musek",
+    "Next" : "Weider",
+    "Pause" : "Paus",
+    "Play" : "Ofspillen",
+    "Previous" : "Zeréck",
+    "Repeat" : "Widderhuelen"
 },
 "nplurals=2; plural=(n != 1);");

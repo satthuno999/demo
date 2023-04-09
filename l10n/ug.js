@@ -1,18 +1,12 @@
 OC.L10N.register(
     "demo",
     {
-    "Edit" : "تەھرىر",
-    "Save" : "ساقلا",
-    "Search" : "Search",
-    "Tags" : "بەلگەلەر",
-    "Rename" : "ئات ئۆزگەرت",
-    "Add" : "قوش",
-    "Close" : "ياپ",
-    "Name" : "ئاتى",
     "Description" : "چۈشەندۈرۈش",
-    "URL" : "URL",
-    "Cancel" : "ۋاز كەچ",
-    "OK" : "جەزملە",
-    "None" : "يوق"
+    "demo" : "نەغمە",
+    "Next" : "كېيىنكى",
+    "Pause" : "ۋاقىتلىق توختا",
+    "Play" : "چال",
+    "Previous" : "ئالدىنقى",
+    "Repeat" : "قايتىلا"
 },
-"nplurals=2; plural=(n != 1);");
+"nplurals=1; plural=0;");
