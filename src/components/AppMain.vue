@@ -107,11 +107,79 @@ export default {
 }
 </script>
 <style>
-@import "~/assets/base.css";
-@import "~/assets/_variables.css";
-</style>
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; */
+    user-select: none;
+}
 
-<!-- <style lang="scss" scoped>
+body {
+    min-height: 100vh;
+    transition: color 0.5s, background-color 0.5s;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+    font-family: "Poppins", sans-serif;
+    /* width: 100vw;
+  height: 100vh; */
+}
+
+/* ::-webkit-slider-thumb{
+    appearance: none;
+    width:.8rem;
+    background-color: #fff;
+    border:.2rem solid #000;
+    border-radius: 50%;
+    height:.8rem;
+} */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+button,
+input {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dbdbdb;
+}
+</style>
+<style scoped>
+:root {
+    --dark_weak: #0F172B;
+    --dark_strong: #303030;
+    --dark_input: #293548;
+    --dark_text: #92A1B6;
+    --dark_btn: #CCCCCC;
+    --dark_field: #1E293B;
+    --dark_head: #293548;
+    --dark_highlight: #2D4258;
+}
+</style >
+<style lang="scss" scoped>
 .app-navigation {
     /* Content has z-index 1000 */
     z-index: 2000;
@@ -208,4 +276,4 @@ export default {
         border-radius: 0;
         margin: 0;
     }
-}</style> -->
+}</style>
