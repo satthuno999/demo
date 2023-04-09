@@ -1,5 +1,6 @@
 <template>
-    <NcContent app-name="demo">
+    <NcContent app-name="demo"
+        class="bg-[#e9e9e9] dark:bg-[#888] px-[12%] py-5 min-h-screen grid justify-center items-center">
         <AppNavi class="app-navigation col-span-1 bg-white" />
         <NcAppContent>
             <div>
@@ -8,12 +9,8 @@
                     <router-view></router-view>
                 </div>
             </div>
-            <div
-                v-if="isMobile"
-                class="navigation-overlay"
-                :class="{ 'stay-open': isNavigationOpen }"
-                @click="closeNavigation"
-            />
+            <div v-if="isMobile" class="navigation-overlay" :class="{ 'stay-open': isNavigationOpen }"
+                @click="closeNavigation" />
         </NcAppContent>
         <dialogs-wrapper></dialogs-wrapper>
         <SettingsDialog />
@@ -72,7 +69,79 @@ export default {
     },
 }
 </script>
+<style>
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; */
+    user-select: none;
+}
 
+body {
+    min-height: 100vh;
+    transition: color 0.5s, background-color 0.5s;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+    font-family: "Poppins", sans-serif;
+    /* width: 100vw;
+  height: 100vh; */
+}
+
+/* ::-webkit-slider-thumb{
+    appearance: none;
+    width:.8rem;
+    background-color: #fff;
+    border:.2rem solid #000;
+    border-radius: 50%;
+    height:.8rem;
+} */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+button,
+input {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dbdbdb;
+}
+</style>
+<style>
+:root {
+    --dark_weak: #0F172B;
+    --dark_strong: #303030;
+    --dark_input: #293548;
+    --dark_text: #92A1B6;
+    --dark_btn: #CCCCCC;
+    --dark_field: #1E293B;
+    --dark_head: #293548;
+    --dark_highlight: #2D4258;
+}
+</style>
 <style lang="scss" scoped>
 .app-navigation {
     /* Content has z-index 1000 */
@@ -111,9 +180,7 @@ export default {
     display: block;
 }
 
-#app-navigation-vue:not(.app-navigation--close)
-    + #app-content-vue
-    .navigation-overlay {
+#app-navigation-vue:not(.app-navigation--close)+#app-content-vue .navigation-overlay {
     display: block;
     animation: fade-in var(--animation-quick) forwards;
 }
@@ -122,14 +189,17 @@ export default {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
+
 @keyframes fade-out {
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
