@@ -1,3 +1,15 @@
+<script setup>
+if (
+    localStorage.getItem("color-theme") === "dark" ||
+    (!("color-theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+    document.documentElement.classList.add("dark")
+} else {
+    document.documentElement.classList.remove("dark")
+}
+</script>
+
 <template>
     <NcContent app-name="demo"
         class="bg-[#e9e9e9] dark:bg-[#888] px-[12%] py-5 min-h-screen grid justify-center items-center">
@@ -52,25 +64,34 @@ export default {
     mounted() {
         this.$log.info("AppMain mounted")
 
+        const styleggfont = document.createElement("style");
+        styleggfont.setAttribute(
+            "ref",
+            "stylesheet"
+        );
+        styleggfont.setAttribute(
+            "href",
+            "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
+        );
+        document.head.appendChild(styleggfont);
 
-        if (document.getElementById('my-ggfont')) return; // was already loaded
-        var styleggfont = document.createElement("style");
-        styleggfont.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap";
-        styleggfont.id = "my-ggfont";
-        document.getElementsByTagName('head')[0].appendChild(styleggfont);
+        const stylefontawesome = document.createElement("style");
+        stylefontawesome.setAttribute(
+            "ref",
+            "stylesheet"
+        );
+        stylefontawesome.setAttribute(
+            "href",
+            "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
+        );
+        document.head.appendChild(stylefontawesome);
 
-        if (document.getElementById('my-stylefontawesome')) return; // was already loaded
-        var stylefontawesome = document.createElement("style");
-        stylefontawesome.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap";
-        stylefontawesome.id = "my-stylefontawesome";
-        document.getElementsByTagName('head')[0].appendChild(stylefontawesome);
-
-
-        if (document.getElementById('my-jquery')) return; // was already loaded
-        var scriptjquery = document.createElement("script");
-        scriptjquery.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js";
-        scriptjquery.id = "my-jquery";
-        document.getElementsByTagName('head')[0].appendChild(scriptjquery);
+        const scriptjquery = document.createElement("script");
+        scriptjquery.setAttribute(
+            "src",
+            "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        );
+        document.head.appendChild(scriptjquery);
 
         subscribe("navigation-toggled", this.updateAppNavigationOpen)
     },
