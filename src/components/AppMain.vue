@@ -64,6 +64,17 @@ export default {
     mounted() {
         this.$log.info("AppMain mounted")
 
+        const stylefontawesome = document.createElement("style");
+        stylefontawesome.setAttribute(
+            "ref",
+            "stylesheet"
+        );
+        stylefontawesome.setAttribute(
+            "href",
+            "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        );
+        document.head.appendChild(stylefontawesome);
+
         const styleggfont = document.createElement("style");
         styleggfont.setAttribute(
             "ref",
@@ -74,17 +85,6 @@ export default {
             "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
         );
         document.head.appendChild(styleggfont);
-
-        const stylefontawesome = document.createElement("style");
-        stylefontawesome.setAttribute(
-            "ref",
-            "stylesheet"
-        );
-        stylefontawesome.setAttribute(
-            "href",
-            "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
-        );
-        document.head.appendChild(stylefontawesome);
 
         const scriptjquery = document.createElement("script");
         scriptjquery.setAttribute(
