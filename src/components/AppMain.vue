@@ -51,6 +51,27 @@ export default {
     },
     mounted() {
         this.$log.info("AppMain mounted")
+
+
+        if (document.getElementById('my-ggfont')) return; // was already loaded
+        var styleggfont = document.createElement("style");
+        styleggfont.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap";
+        styleggfont.id = "my-ggfont";
+        document.getElementsByTagName('head')[0].appendChild(styleggfont);
+
+        if (document.getElementById('my-stylefontawesome')) return; // was already loaded
+        var stylefontawesome = document.createElement("style");
+        stylefontawesome.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap";
+        stylefontawesome.id = "my-stylefontawesome";
+        document.getElementsByTagName('head')[0].appendChild(stylefontawesome);
+
+
+        if (document.getElementById('my-jquery')) return; // was already loaded
+        var scriptjquery = document.createElement("script");
+        scriptjquery.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js";
+        scriptjquery.id = "my-jquery";
+        document.getElementsByTagName('head')[0].appendChild(scriptjquery);
+
         subscribe("navigation-toggled", this.updateAppNavigationOpen)
     },
     unmounted() {
@@ -130,7 +151,7 @@ input {
     background: #dbdbdb;
 }
 </style>
-<style>
+<style scoped>
 :root {
     --dark_weak: #0F172B;
     --dark_strong: #303030;
@@ -141,7 +162,7 @@ input {
     --dark_head: #293548;
     --dark_highlight: #2D4258;
 }
-</style>
+</style >
 <style lang="scss" scoped>
 .app-navigation {
     /* Content has z-index 1000 */
