@@ -1,12 +1,22 @@
 OC.L10N.register(
     "demo",
     {
+    "in %s" : "in %s",
+    "Edit" : "Modificar",
+    "Save" : "Salveguardar",
+    "Search" : "Cercar",
+    "Category" : "Categoria",
+    "Tags" : "Etiquettas",
+    "Rename" : "Renominar",
+    "Add" : "Adder",
+    "Close" : "Clauder",
+    "Name" : "Nomine",
     "Description" : "Description",
-    "demo" : "Musica",
-    "Next" : "Proxime",
-    "Pause" : "Pausa",
-    "Play" : "Reproducer",
-    "Previous" : "Previe",
-    "Repeat" : "Repeter"
+    "URL" : "URL",
+    "Loading…" : "Cargante...",
+    "Dismiss" : "Dimitter",
+    "Cancel" : "Cancellar",
+    "OK" : "Ok",
+    "None" : "Nulle"
 },
 "nplurals=2; plural=(n != 1);");

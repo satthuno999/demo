@@ -1,8 +1,16 @@
 OC.L10N.register(
     "demo",
     {
+    "Edit" : "تدوین کریں",
+    "Save" : "حفظ",
+    "Search" : "Search",
+    "Rename" : "Rename",
+    "Add" : "شامل کریں",
+    "Close" : "بند ",
+    "Name" : "اسم",
     "Description" : "تصریح",
-    "Next" : "اگلا",
-    "Repeat" : "دہرایں"
+    "URL" : "یو ار ایل",
+    "Cancel" : "منسوخ کریں",
+    "OK" : "اوکے"
 },
 "nplurals=2; plural=(n != 1);");

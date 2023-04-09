@@ -1,13 +1,17 @@
 OC.L10N.register(
     "demo",
     {
+    "in %s" : "dalam %s",
+    "Edit" : "Sunting",
+    "Save" : "Simpan",
+    "Search" : "Search",
+    "Rename" : "Namakan",
+    "Add" : "Tambah",
+    "Close" : "Tutup",
+    "Name" : "Nama",
     "Description" : "Keterangan",
-    "demo" : "Muzik",
-    "Next" : "Seterus",
-    "Pause" : "Jeda",
-    "Play" : "Main",
-    "Previous" : "Sebelum",
-    "Repeat" : "Ulang",
-    "Shuffle" : "Kocok"
+    "URL" : "URL",
+    "Cancel" : "Batal",
+    "OK" : "OK"
 },
 "nplurals=1; plural=0;");

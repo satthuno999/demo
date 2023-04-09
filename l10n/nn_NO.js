@@ -1,12 +1,25 @@
 OC.L10N.register(
     "demo",
     {
+    "in %s" : "i %s",
+    "Page not found" : "Fann ikkje sida",
+    "Edit" : "Rediger",
+    "Save" : "Lagre",
+    "Search" : "Search",
+    "Filter" : "Filter",
+    "Category" : "Kategori",
+    "Tags" : "Emneord",
+    "Rename" : "Gje nytt namn",
+    "Add" : "Legg til",
+    "Close" : "Lukk",
+    "Name" : "Namn",
     "Description" : "Skildring",
-    "demo" : "Musikk",
-    "Next" : "Neste",
-    "Pause" : "Pause",
-    "Play" : "Spel",
-    "Previous" : "Førre",
-    "Repeat" : "Gjenta"
+    "URL" : "URL",
+    "Last modified" : "Siste endra",
+    "Loading…" : "Laster...",
+    "Dismiss" : "Forkast",
+    "Cancel" : "Avbryt",
+    "OK" : "OK",
+    "None" : "Ingen"
 },
 "nplurals=2; plural=(n != 1);");
