@@ -1,13 +1,13 @@
 <?php
 
-namespace OCA\NotesTutorial\Controller;
+namespace OCA\Demo\Controller;
 
 use Closure;
 
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\DataResponse;
 
-use OCA\NotesTutorial\Service\NotFoundException;
+use OCA\Demo\Service\NotFoundException;
 
 
 trait Errors {

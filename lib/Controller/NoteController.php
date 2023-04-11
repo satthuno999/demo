@@ -6,7 +6,7 @@
  use OCP\AppFramework\Http\DataResponse;
  use OCP\AppFramework\Controller;
  
- use OCA\NotesTutorial\Service\NoteService;
+ use OCA\Demo\Service\NoteService;
 
  class NoteController extends Controller {
     private $service;

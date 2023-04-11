@@ -57,6 +57,9 @@ return [
 
 		// Preflight option for CORS API
 		['name' => 'util_api#preflighted_cors', 'url' => '/api/{path}', 'verb' => 'OPTIONS', 'requirements' => ['path' => '.+']],
+		//forNote
+		 ['name' => 'note_api#preflighted_cors', 'url' => '/api/0.1/{path}',
+         'verb' => 'OPTIONS', 'requirements' => ['path' => '.+']]
 	],
 
 	/* API resources */
@@ -65,6 +68,7 @@ return [
 		'recipe_api' => ['url' => '/api/v1/recipes'],
 
 		//notetutorial
-		'note' => ['url' => '/notes']
+		'note' => ['url' => '/notes'],
+		'note_api' => ['url' => '/api/0.1/notes']
 	]
 ];
