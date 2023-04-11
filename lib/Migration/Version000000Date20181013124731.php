@@ -7,7 +7,7 @@
   use OCP\Migration\SimpleMigrationStep;
   use OCP\Migration\IOutput;
 
-  class Version1400Date20181013124731 extends SimpleMigrationStep {
+  class Version000000Date20181013124731 extends SimpleMigrationStep {
 
     /**
     * @param IOutput $output
