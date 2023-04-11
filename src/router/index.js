@@ -12,6 +12,7 @@ import NotFound from "../components/NotFound.vue"
 import RecipeView from "../components/RecipeView.vue"
 import RecipeEdit from "../components/RecipeEdit.vue"
 import Search from "../components/SearchResults.vue"
+import NoteTutorial from "../components/NoteTutorial.vue"
 
 Vue.use(VueRouter)
 
@@ -48,6 +49,11 @@ const routes = [
         name: "search-tags",
         component: Search,
         props: { query: "tags" },
+    },
+{
+        path: "/note/",
+        name: "note",
+        component: NoteTutorial,
     },
 
     // Recipe routes
