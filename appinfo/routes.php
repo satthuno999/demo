@@ -63,5 +63,8 @@ return [
 	'resources' => [
 		'recipe' => ['url' => '/webapp/recipes'],
 		'recipe_api' => ['url' => '/api/v1/recipes'],
+
+		//notetutorial
+		'note' => ['url' => '/notes']
 	]
 ];
